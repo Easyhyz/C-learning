@@ -17,9 +17,9 @@ struct LNode
 };
 typedef PtrToNode Linklist;
 
-Linklist Read();
-void Print(Linklist L);
-Linklist Merge(Linklist L1, Linklist L2);
+Linklist Read(); // 读取链表
+void Print(Linklist L); // 打印链表
+Linklist Merge(Linklist L1, Linklist L2); // 合并链表
 
 
 Linklist Read()
@@ -34,10 +34,12 @@ Linklist Read()
     scanf("%d", &x);
     while (x != -1)
     {
+        // 更新链表
         temp = (Linklist)malloc(sizeof(struct LNode));
         temp -> data = x;
         temp -> next = NULL;
 
+        // 更新尾结点
         tail -> next = temp;
         tail = temp;
 
@@ -71,13 +73,14 @@ Linklist Merge(Linklist L1, Linklist L2)
     Linklist p1 = L1->next;
     Linklist p2 = L2->next;
 
+    // 定义新链表
     head = (Linklist)malloc(sizeof(struct LNode));
     head -> next = NULL;
     tail = head;
 
     while (p1 && p2)
     {
-        if (p1->data <= p2->data)
+        if (p1->data <= p2->data) // 比较大小，小的优先排
         {
             tail->next = p1;
             p1 = p1->next;
