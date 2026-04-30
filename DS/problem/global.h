@@ -10,5 +10,4 @@
 #define ERROR 0
 #define INITSIZE 100
 #define MAXLEN 1314
-
-typedef int Elemtype;
+#define RESIZE 20

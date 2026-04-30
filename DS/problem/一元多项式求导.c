@@ -11,8 +11,9 @@
 #define INITSIZE 100
 
 typedef int Elemtype;
+struct Term;
 
-struct Term
+struct Term // 多项式的项
 {
     int coef;
     int exp;
@@ -25,7 +26,7 @@ int main()
     int n = 0;
     while (scanf("%d %d", &terms[n].coef, &terms[n].exp) == 2)
     {
-        if (terms[n].coef == 0 || terms[n].exp == 0)
+        if (terms[n].coef == 0 || terms[n].exp == 0) // 系数与指数为零时结束
         {
             break;
         }
